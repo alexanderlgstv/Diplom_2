@@ -1,3 +1,6 @@
+package generators;
+import models.Order;
+
 public class OrderGenerator {
 
     public static Order getOrderDefault() {

@@ -1,4 +1,4 @@
-import org.apache.commons.lang3.RandomStringUtils;
+package models;
 
 public class Credentials {
     private String email;

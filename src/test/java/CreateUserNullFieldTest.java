@@ -1,6 +1,8 @@
+import clients.UserClient;
+import generators.UserGenerator;
+import models.User;
 import org.junit.Test;
 import org.junit.After;
-import io.qameta.allure.junit4.DisplayName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import io.qameta.allure.Description;
@@ -9,6 +11,7 @@ import io.restassured.response.Response;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import org.junit.Before;
+import io.qameta.allure.junit4.DisplayName;
 
 @RunWith(Parameterized.class)
 public class CreateUserNullFieldTest {

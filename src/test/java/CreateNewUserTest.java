@@ -1,4 +1,7 @@
+import clients.UserClient;
+import generators.UserGenerator;
 import io.qameta.allure.Description;
+import models.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

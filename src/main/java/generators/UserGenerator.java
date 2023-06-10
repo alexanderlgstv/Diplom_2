@@ -1,3 +1,7 @@
+package generators;
+import models.User;
+import models.Credentials;
+
 import net.datafaker.Faker;
 
 public class UserGenerator {

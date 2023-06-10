@@ -1,5 +1,12 @@
+import clients.OrderClient;
+import clients.UserClient;
+import generators.OrderGenerator;
+import generators.UserGenerator;
 import io.qameta.allure.Description;
 import io.restassured.response.Response;
+import models.Credentials;
+import models.Order;
+import models.User;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -35,7 +42,7 @@ public class OrderListTest {
 
 
     @Test
-    @DisplayName("Get order list. User is logged in")
+    @DisplayName("Get order list. models.User is logged in")
     @Description("Try to get order list when user is logged in")
     public void getOrderListWithAuthTest() {
         Response response = orderClient.getOrderList(accessToken);
@@ -51,7 +58,7 @@ public class OrderListTest {
     }
 
     @Test
-    @DisplayName("Get order list. User is not logged in")
+    @DisplayName("Get order list. models.User is not logged in")
     @Description("Try to get order list when user is not logged in")
     public void getOrderListWithoutAuthTest() {
         Response response = orderClient.getOrderList("");

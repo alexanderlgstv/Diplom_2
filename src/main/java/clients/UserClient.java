@@ -1,3 +1,8 @@
+package clients;
+
+import clients.Client;
+import models.User;
+import models.Credentials;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;

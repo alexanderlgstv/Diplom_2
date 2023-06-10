@@ -1,10 +1,18 @@
+import clients.OrderClient;
+import clients.UserClient;
+import generators.OrderGenerator;
+import generators.UserGenerator;
 import io.qameta.allure.Description;
 import io.restassured.response.Response;
+import models.Credentials;
+import models.Order;
+import models.User;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import io.qameta.allure.junit4.DisplayName;
+
 import static org.apache.http.HttpStatus.*;
 
 
@@ -29,7 +37,7 @@ public class CreateOrderTest {
     }
 
     @Test
-    @DisplayName("Create order. User is logged in")
+    @DisplayName("Create order. models.User is logged in")
     @Description("Try to create order when user is logged in")
     public void createOrderWithAuthAvailableTest() {
         order = OrderGenerator.getOrderDefault();
@@ -46,7 +54,7 @@ public class CreateOrderTest {
     }
 
     @Test
-    @DisplayName("Create order. User is not logged in")
+    @DisplayName("Create order. models.User is not logged in")
     @Description("Try to create order when user is not logged in")
     public void createOrderWithoutAuthAvailableTest() {
         order = OrderGenerator.getOrderDefault();
@@ -60,7 +68,7 @@ public class CreateOrderTest {
     }
 
     @Test
-    @DisplayName("Create order. Order without ingredients")
+    @DisplayName("Create order. models.Order without ingredients")
     @Description("Try to create order without ingredients")
     public void createOrderWithoutIngredientsTest() {
         order = OrderGenerator.getOrderWithoutIngredients();
@@ -77,7 +85,7 @@ public class CreateOrderTest {
     }
 
     @Test
-    @DisplayName("Create order. Order with wrong hash ingredients")
+    @DisplayName("Create order. models.Order with wrong hash ingredients")
     @Description("Try to create order with wrong hash ingredients")
     public void createOrderWithWrongHashTest() {
         order = OrderGenerator.getOrderWithWrongIngredientsHash();

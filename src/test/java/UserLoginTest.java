@@ -1,9 +1,14 @@
+import clients.UserClient;
+import generators.UserGenerator;
 import io.qameta.allure.Description;
+import models.Credentials;
+import models.User;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 import io.restassured.response.Response;
 import io.qameta.allure.junit4.DisplayName;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -26,7 +31,7 @@ public class UserLoginTest {
 
     @Test
     @DisplayName("Successful user authorization with valid credentials")
-    @Description("User try to logged in with valid credentials ")
+    @Description("models.User try to logged in with valid credentials ")
     public void userValidCredentialsLoginTest() {
         Response loginResponse = userClient.login(Credentials.from(user));
 
@@ -45,7 +50,7 @@ public class UserLoginTest {
 
     @Test
     @DisplayName("Login with invalid credentials")
-    @Description("User try to logged in with invalid credentials")
+    @Description("models.User try to logged in with invalid credentials")
     public void userInvalidCredentialsLoginTest() {
         Response loginResponse = userClient.login(UserGenerator.getCredentials());
 
